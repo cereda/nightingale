@@ -35,6 +35,7 @@ package com.github.cereda.nightingale.utils;
 
 import com.github.cereda.nightingale.controller.ConfigurationController;
 import com.github.cereda.nightingale.controller.LanguageController;
+import com.github.cereda.nightingale.model.Command;
 import com.github.cereda.nightingale.model.NightingaleException;
 import com.github.cereda.nightingale.model.Conditional;
 import com.github.cereda.nightingale.model.Messages;
@@ -456,12 +457,12 @@ public class InterpreterUtils {
 
     /**
      * Runs the command in the underlying operating system.
-     * @param command The string representing the command.
+     * @param command An object representing the command.
      * @return An integer value representing the exit code.
      * @throws NightingaleException Something wrong happened, to be caught in
      * the higher levels.
      */
-    public static int run(String command) throws NightingaleException {
+    public static int run(Object command) throws NightingaleException {
         boolean verbose = (Boolean) ConfigurationController.
                 getInstance().
                 get("execution.verbose");
@@ -476,7 +477,13 @@ public class InterpreterUtils {
                 get("execution.timeout.unit");
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 
-        ProcessExecutor executor = new ProcessExecutor().commandSplit(command);
+        ProcessExecutor executor = new ProcessExecutor();
+        if (CommonUtils.checkClass(Command.class, command)) {
+            executor = executor.command(((Command) command).getElements());
+        }
+        else {
+            executor = executor.commandSplit((String) command);
+        }
         if (timeout) {
             if (value == 0) {
                 throw new NightingaleException(

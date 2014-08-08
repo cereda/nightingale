@@ -334,10 +334,15 @@ public class Interpreter {
                                             } else {
                                                 
                                                 // not a boolean nor a trigger,
-                                                // let's simply get a string
-                                                // representation of the command
-                                                String representation =
-                                                        String.valueOf(current);
+                                                // so it's either a command or
+                                                // a string
+                                                Object representation = CommonUtils.
+                                                        checkClass(
+                                                                Command.class,
+                                                                current
+                                                        )
+                                                        ? current
+                                                        : String.valueOf(current);
 
                                                 logger.info(
                                                         messages.getMessage(
