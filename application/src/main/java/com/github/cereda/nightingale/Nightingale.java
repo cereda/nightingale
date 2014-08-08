@@ -34,6 +34,7 @@
 package com.github.cereda.nightingale;
 
 import com.github.cereda.nightingale.controller.LanguageController;
+import com.github.cereda.nightingale.controller.LoggingController;
 import com.github.cereda.nightingale.model.NightingaleException;
 import com.github.cereda.nightingale.model.Configuration;
 import com.github.cereda.nightingale.model.Directive;
@@ -65,6 +66,12 @@ public class Nightingale {
         // has no body at all, but it's a dirty maneuver to
         // trigger the static class startup
         LanguageController.init();
+        
+        // the second component to be initalized is the
+        // logging controller; note init() actually disables
+        // the logging, so early exceptions won't generate
+        // a lot of noise in the terminal
+        LoggingController.init();
         
         // print the nightingale logo in the terminal; I just
         // hope people use this tool in a good terminal with

@@ -96,5 +96,12 @@ public class LoggingController {
         String r = "/com/github/cereda/nightingale/configuration/logback.xml";
         return LoggingController.class.getResourceAsStream(r);
     }
+    
+    /**
+     * Initializes the logging controller by disabling it.
+     */
+    public static void init() {
+        enableLogging(false);
+    }
 
 }
