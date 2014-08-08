@@ -64,6 +64,14 @@ public class Command {
     }
 
     /**
+     * Constructor.
+     * @param elements A list of strings.
+     */
+    public Command(List<String> elements) {
+        this.elements = elements;
+    }
+
+    /**
      * Gets the list of strings representing each element of a command.
      * @return A list of strings.
      */
