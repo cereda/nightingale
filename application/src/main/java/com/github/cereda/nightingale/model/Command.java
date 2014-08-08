@@ -35,6 +35,7 @@ package com.github.cereda.nightingale.model;
 
 import com.github.cereda.nightingale.utils.CommonUtils;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -55,7 +56,8 @@ public class Command {
      */
     public Command(Object... values) {
         elements = new ArrayList<String>();
-        for (Object value : values) {
+        List result = CommonUtils.flatten(Arrays.asList(values));
+        for (Object value : result) {
             String element = String.valueOf(value);
             if (!CommonUtils.checkEmptyString(element)) {
                 elements.add(element);
@@ -88,6 +90,4 @@ public class Command {
         return CommonUtils.getCollectionElements(elements, "[ ", " ]", ", ");
     }
     
-    
-   
 }
