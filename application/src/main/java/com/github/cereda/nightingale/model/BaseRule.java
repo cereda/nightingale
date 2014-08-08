@@ -607,5 +607,49 @@ public class BaseRule extends Script {
     public Session session() {
         return session;
     }
+    
+    /**
+     * Checks if the provided string matches with the underlying operating
+     * system.
+     * @param check The provided string.
+     * @return A boolean value indicating if the underlying operating system
+     * matches with the provided string.
+     * @throws NightingaleException Something wrong happened, to be caught in
+     * the higher levels.
+     */
+    public boolean operatingsystem(String check)
+            throws NightingaleException {
+        return CommonUtils.checkOS(check);
+    }
+    
+    /**
+     * Returns the provided string if the check matches with the underlying
+     * operating system.
+     * @param check The provided check.
+     * @param value The provided string to be returned if the check matches.
+     * @return The provided string if the check matches with the underlying
+     * operating system.
+     * @throws NightingaleException Something wrong happened, to be caught in
+     * the higher levels.
+     */
+    public String operatingsystem(String check, String value)
+            throws NightingaleException {
+        return CommonUtils.checkOS(check) ? value : "";
+    }
+    
+    /**
+     * Returns the first string if the provided check matches with the
+     * underlying operating system, or the second string otherwise.
+     * @param check The provided check.
+     * @param value1 The first string.
+     * @param value2 The second string.
+     * @return One of the strings, according to the underlying operating system
+     * match.
+     * @throws NightingaleException 
+     */
+    public String operatingsystem(String check, String value1, String value2)
+            throws NightingaleException {
+        return CommonUtils.checkOS(check) ? value1 : value2;
+    }
 
 }
