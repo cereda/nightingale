@@ -37,8 +37,6 @@ commands = [
 				}
 			}
 			
-			def options = ''
-			
 			if (defined('options')) {
 				options = obtain('options')
 				if (!(options instanceof List)) {
