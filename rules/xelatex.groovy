@@ -10,7 +10,7 @@ rule = [
     id : "xelatex",
     name : "XeLaTeX",
     arguments : [ "interaction", "draft", "shell", "synctex", "options" ],
-    description : "The LaTeX engine",
+    description : "The XeLaTeX engine",
     authors : [
         "Paulo Roberto Massa Cereda"
     ],

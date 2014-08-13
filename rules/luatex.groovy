@@ -10,7 +10,7 @@ rule = [
     id : "luatex",
     name : "LuaTeX",
     arguments : [ "interaction", "draft", "shell", "synctex", "options" ],
-    description : "The LaTeX engine",
+    description : "The LuaTeX engine",
     authors : [
         "Paulo Roberto Massa Cereda"
     ],

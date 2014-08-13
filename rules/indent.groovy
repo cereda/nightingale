@@ -10,7 +10,7 @@ rule = [
     id : "indent",
     name : "Indent",
     arguments : [ "silent", "overwrite", "trace", "settings", "cruft", "output" ],
-    description : "Indent",
+    description : "The latexindent.pl script",
     authors : [
 		"Chris Hughes",
         "Paulo Roberto Massa Cereda"

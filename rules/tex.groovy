@@ -10,7 +10,7 @@ rule = [
     id : "tex",
     name : "TeX",
     arguments : [ "interaction", "shell", "options" ],
-    description : "The LaTeX engine",
+    description : "The TeX engine",
     authors : [
         "Paulo Roberto Massa Cereda"
     ],

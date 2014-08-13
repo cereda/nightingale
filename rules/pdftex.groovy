@@ -10,7 +10,7 @@ rule = [
     id : "pdftex",
     name : "PDFTeX",
     arguments : [ "interaction", "draft", "shell", "synctex", "options" ],
-    description : "The LaTeX engine",
+    description : "The PDFLaTeX engine",
     authors : [
         "Paulo Roberto Massa Cereda"
     ],
