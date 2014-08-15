@@ -12,8 +12,8 @@ rule = [
     arguments : [],
     description : "The halt trigger",
     authors : [
-		"Heiko Oberdiek",
-        "Paulo Cereda"
+	"Heiko Oberdiek",
+	"Paulo Cereda"
     ],
     requires : 1.0
 ]
@@ -23,9 +23,9 @@ commands = [
         name : "Halt trigger",
         command : {
 
-			return new Trigger('halt', [])
+		return new Trigger('halt', [])
 
-		},
+	},
         exit : { value -> return true }
     ]
 ]

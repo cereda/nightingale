@@ -12,8 +12,8 @@ rule = [
     arguments : [ "silent", "overwrite", "trace", "settings", "cruft", "output" ],
     description : "The latexindent.pl script",
     authors : [
-		"Chris Hughes",
-        "Paulo Cereda"
+	"Chris Hughes",
+	"Paulo Cereda"
     ],
     requires : 1.0
 ]
@@ -23,38 +23,38 @@ commands = [
         name : "The latexindent.pl script",
         command : {
 
-			ensure('cruft', '')
-			ensure('settings', '')
-			ensure('output', '')
+		ensure('cruft', '')
+		ensure('settings', '')
+		ensure('output', '')
 
-			def file = filename(obtain('file'))
-			def silent = defined('silent') ? check(true, 'silent', '-s') : ''
-			def overwrite = defined('overwrite') ? check(true, 'overwrite', '-w') : ''
-			def trace = defined('trace') ? check(true, 'trace', '-t') : ''
-			
-			def settings = obtain('settings')
-			if (!empty(settings)) {
-				if (!(settings in [ "local", "onlydefault" ])) {
-					error("I am sorry, you provided an invalid value for settings: ${settings}")
-				}
-				else {
-					settings = conditional(settings == "local", "-l", "-d")
-				}
+		def file = filename(obtain('file'))
+		def silent = defined('silent') ? check(true, 'silent', '-s') : ''
+		def overwrite = defined('overwrite') ? check(true, 'overwrite', '-w') : ''
+		def trace = defined('trace') ? check(true, 'trace', '-t') : ''
+
+		def settings = obtain('settings')
+		if (!empty(settings)) {
+			if (!(settings in [ "local", "onlydefault" ])) {
+				error("I am sorry, you provided an invalid value for settings: ${settings}")
 			}
-			
-			def cruft = obtain('cruft')
-			if (!empty(cruft)) {
-				cruft = "-c=${cruft}"
+			else {
+				settings = conditional(settings == "local", "-l", "-d")
 			}
-			
-			def output = obtain('output')
-			if (!empty(output)) {
-				output = [ '-o', output ]
-			}
-			
-			return new Command('latexindent', silent, trace, settings, cruft, overwrite, output, file)
-			
-		},
+		}
+
+		def cruft = obtain('cruft')
+		if (!empty(cruft)) {
+			cruft = "-c=${cruft}"
+		}
+
+		def output = obtain('output')
+		if (!empty(output)) {
+			output = [ '-o', output ]
+		}
+
+		return new Command('latexindent', silent, trace, settings, cruft, overwrite, output, file)
+
+	},
         exit : { value -> return value == 0 }
     ]
 ]
