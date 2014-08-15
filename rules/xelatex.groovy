@@ -12,7 +12,8 @@ rule = [
     arguments : [ "interaction", "draft", "shell", "synctex", "options" ],
     description : "The XeLaTeX engine",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

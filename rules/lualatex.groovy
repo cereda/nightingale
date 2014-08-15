@@ -12,7 +12,8 @@ rule = [
     arguments : [ "interaction", "draft", "shell", "synctex", "options" ],
     description : "The LuaLaTeX engine",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

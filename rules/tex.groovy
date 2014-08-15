@@ -12,7 +12,8 @@ rule = [
     arguments : [ "interaction", "shell", "options" ],
     description : "The TeX engine",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

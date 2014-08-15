@@ -12,7 +12,8 @@ rule = [
     arguments : [ "options" ],
     description : "The BibTeX reference management software",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

@@ -12,7 +12,8 @@ rule = [
     arguments : [],
     description : "The halt trigger",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Heiko Oberdiek",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

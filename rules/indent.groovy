@@ -13,7 +13,7 @@ rule = [
     description : "The latexindent.pl script",
     authors : [
 		"Chris Hughes",
-        "Paulo Roberto Massa Cereda"
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

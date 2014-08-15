@@ -12,7 +12,8 @@ rule = [
     arguments : [ "options", "output" ],
     description : "PS2PDF",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

@@ -12,7 +12,8 @@ rule = [
     arguments : [ "german", "style" ],
     description : "The MakeIndex software",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

@@ -12,7 +12,9 @@ rule = [
     arguments : [ "options", "style" ],
     description : "Nomencl",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+		"Nicola Talbot",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]

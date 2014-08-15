@@ -12,7 +12,9 @@ rule = [
     arguments : [ "options" ],
     description : "The MakeGlossaries software",
     authors : [
-        "Paulo Roberto Massa Cereda"
+		"Marco Daniel",
+		"Nicola Talbot",
+        "Paulo Cereda"
     ],
     requires : 1.0
 ]
