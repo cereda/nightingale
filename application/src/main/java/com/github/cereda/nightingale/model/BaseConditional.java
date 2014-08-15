@@ -88,29 +88,29 @@ public class BaseConditional extends Script {
     }
 
     /**
-     * Evaluates the conditional expression and returns a string value if the
+     * Evaluates the conditional expression and returns an object value if the
      * evaluation holds true, or an empty string otherwise.
      * @param operation A boolean expression.
-     * @param value The string value to be returned if the provided expression
+     * @param value The object value to be returned if the provided expression
      * evaluation holds true.
-     * @return A string, result of the expression evaluation.
+     * @return Am object, result of the expression evaluation.
      */
-    public String conditional(boolean operation, String value) {
+    public Object conditional(boolean operation, Object value) {
         return (operation ? value : "");
     }
 
     /**
-     * Evaluates the conditional expression and returns a string according to
+     * Evaluates the conditional expression and returns an object according to
      * the result.
      * @param operation A boolean expression.
-     * @param value1 A string value to be returned if the provided expression
+     * @param value1 An object value to be returned if the provided expression
      * holds true.
-     * @param value2 A string value to be returned if the provided expression
+     * @param value2 An object value to be returned if the provided expression
      * holds false.
-     * @return A string, result of the expression evaluation.
+     * @return An object, result of the expression evaluation.
      */
-    public String conditional(boolean operation,
-            String value1, String value2) {
+    public Object conditional(boolean operation,
+            Object value1, Object value2) {
         return (operation ? value1 : value2);
     }
 

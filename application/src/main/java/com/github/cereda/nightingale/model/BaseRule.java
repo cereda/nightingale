@@ -279,61 +279,61 @@ public class BaseRule extends Script {
     }
 
     /**
-     * Returns a string if the provided key holds the provided boolean value.
+     * Returns an object if the provided key holds the provided boolean value.
      * @param expected Boolean value.
      * @param key The key.
-     * @param value The string.
-     * @return The string if the provided key holds the provided boolean value,
+     * @param value The object.
+     * @return The object if the provided key holds the provided boolean value,
      * or an empty string otherwise.
      * @throws NightingaleException Something wrong happened, to be caught in
      * the higher levels.
      */
-    public String check(boolean expected, String key, String value)
+    public Object check(boolean expected, String key, Object value)
             throws NightingaleException {
         return (check(expected, key) ? value : "");
     }
 
     /**
-     * Returns a string according to the evaluation of the provided key against
+     * Returns an object according to the evaluation of the provided key against
      * the provided boolean value.
      * @param expected The boolean value.
      * @param key The key.
-     * @param value1 A string in case the evaluation holds.
-     * @param value2 A string in case the evaluation does not hold.
-     * @return A string according to the evaluation of the provided key against
+     * @param value1 An object in case the evaluation holds.
+     * @param value2 An object in case the evaluation does not hold.
+     * @return An object according to the evaluation of the provided key against
      * the provided boolean value.
      * @throws NightingaleException Something wrong happened, to be caught in
      * the higher levels.
      */
-    public String check(boolean expected, String key,
-            String value1, String value2) throws NightingaleException {
+    public Object check(boolean expected, String key,
+            Object value1, Object value2) throws NightingaleException {
         return (check(expected, key) ? value1 : value2);
     }
 
     /**
-     * Evaluates the conditional expression and returns a string value if the
+     * Evaluates the conditional expression and returns an object value if the
      * evaluation holds true, or an empty string otherwise.
      * @param operation A boolean expression.
-     * @param value The string value to be returned if the provided expression
+     * @param value The object value to be returned if the provided expression
      * evaluation holds true.
-     * @return A string, result of the expression evaluation.
+     * @return An object, result of the expression evaluation.
      */
-    public String conditional(boolean operation, String value) {
+    public Object conditional(boolean operation, Object value) {
         return (operation ? value : "");
     }
 
     /**
-     * Evaluates the conditional expression and returns a string according to
+     * Evaluates the conditional expression and returns an object according to
      * the result.
      * @param operation A boolean expression.
-     * @param value1 A string value to be returned if the provided expression
+     * @param value1 An object value to be returned if the provided expression
      * holds true.
-     * @param value2 A string value to be returned if the provided expression
+     * @param value2 An object value to be returned if the provided expression
      * holds false.
-     * @return A string, result of the expression evaluation.
+     * @return An object, result of the expression evaluation.
      */
-    public String conditional(boolean operation,
-            String value1, String value2) {
+    public Object conditional(boolean operation,
+            Object value1, Object value2) {
         return (operation ? value1 : value2);
     }
 
@@ -623,31 +623,31 @@ public class BaseRule extends Script {
     }
     
     /**
-     * Returns the provided string if the check matches with the underlying
+     * Returns the provided object if the check matches with the underlying
      * operating system.
      * @param check The provided check.
-     * @param value The provided string to be returned if the check matches.
-     * @return The provided string if the check matches with the underlying
+     * @param value The provided object to be returned if the check matches.
+     * @return The provided object if the check matches with the underlying
      * operating system.
      * @throws NightingaleException Something wrong happened, to be caught in
      * the higher levels.
      */
-    public String operatingsystem(String check, String value)
+    public Object operatingsystem(String check, Object value)
             throws NightingaleException {
         return CommonUtils.checkOS(check) ? value : "";
     }
     
     /**
-     * Returns the first string if the provided check matches with the
-     * underlying operating system, or the second string otherwise.
+     * Returns the first object if the provided check matches with the
+     * underlying operating system, or the second object otherwise.
      * @param check The provided check.
-     * @param value1 The first string.
-     * @param value2 The second string.
-     * @return One of the strings, according to the underlying operating system
+     * @param value1 The first object.
+     * @param value2 The second object.
+     * @return One of the objects, according to the underlying operating system
      * match.
      * @throws NightingaleException 
      */
-    public String operatingsystem(String check, String value1, String value2)
+    public Object operatingsystem(String check, Object value1, Object value2)
             throws NightingaleException {
         return CommonUtils.checkOS(check) ? value1 : value2;
     }
