@@ -48,12 +48,19 @@ public class StopWatch {
     // and stopped
     private static long beginning = 0;
     private static long end = 0;
+    
+    // a variable to indicate the
+    // stopwatch id enabled; so far,
+    // it hasn't started, then it is
+    // not enabled
+    private static boolean enabled = false;
 
     /**
      * Starts the stopwatch.
      */
     public static void start() {
         beginning = System.nanoTime();
+        enabled = true;
     }
 
     /**
@@ -72,10 +79,13 @@ public class StopWatch {
                 (Language) ConfigurationController.
                         getInstance().
                         get("execution.language");
+        double result = enabled ?
+                (double) (end - beginning) / 1000000000
+                : 0.0;
         return String.format(
                 language.getLocale(),
                 "%1.2f",
-                (double) (end - beginning) / 1000000000
+                result
         );
     }
 
