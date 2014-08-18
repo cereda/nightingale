@@ -50,7 +50,7 @@ public class StopWatch {
     private static long end = 0;
     
     // a variable to indicate the
-    // stopwatch id enabled; so far,
+    // stopwatch is enabled; so far,
     // it hasn't started, then it is
     // not enabled
     private static boolean enabled = false;
