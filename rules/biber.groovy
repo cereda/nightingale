@@ -29,7 +29,7 @@ commands = [
 		if (defined('options')) {
 			options = obtain('options')
 			if (!(options instanceof List)) {
-				error("I am sorry, but I expecting a list when using the 'options' argument.")
+				error("I am sorry, but I was expecting a list when using the 'options' argument.")
 			}
 		}
 
