@@ -54,6 +54,6 @@ public class DirectiveResolver extends Resolver {
         addImplicitResolver(Tag.MERGE, MERGE, "<");
         addImplicitResolver(Tag.NULL, NULL, "~nN\0");
         addImplicitResolver(Tag.NULL, EMPTY, null);
-        addImplicitResolver(Tag.VALUE, VALUE, "=");
+        //addImplicitResolver(Tag.VALUE, VALUE, "=");
     }
 }
